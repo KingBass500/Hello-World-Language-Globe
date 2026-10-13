@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello World — Language Globe</title>
+<style>
+:root{color-scheme:dark;--bg:#050914;--cyan:#54eaff;--muted:#9db0c8}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 42%,#10213c 0%,#070d1c 45%,#03060d 100%);color:#eaf7ff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;overflow-x:hidden}
+main{width:min(1100px,100%);margin:auto;padding:28px 20px 32px;display:flex;flex-direction:column;align-items:center;gap:14px}
+header{text-align:center}h1{margin:0;font-size:clamp(1.35rem,4vw,2.5rem);letter-spacing:.08em;text-shadow:0 0 22px #3bcfff88}header p{color:var(--muted);margin:9px 0 0;font-size:.88rem}
+.stage{position:relative;width:min(76vw,620px);height:min(76vw,620px);min-width:300px;min-height:300px;max-width:620px;max-height:620px}
+canvas{width:100%;height:100%;display:block}
+.hud{position:absolute;left:5%;right:5%;bottom:4%;display:flex;justify-content:space-between;gap:12px;color:#8bb4d3;font-size:11px;letter-spacing:.06em;pointer-events:none}
+.controls{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;align-items:center}
+button{background:#0d1b2c;color:#c8f6ff;border:1px solid #24516b;border-radius:7px;padding:10px 15px;font:inherit;cursor:pointer;transition:.2s}
+button:hover,button:focus-visible{border-color:var(--cyan);box-shadow:0 0 15px #36dfff35;outline:none}
+button.primary{background:#103149;border-color:#3abbd8}
+input[type=range]{accent-color:#52dff5;width:145px}
+.search{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:min(100%,520px)}
+input[type=search]{flex:1;min-width:180px;background:#07111f;border:1px solid #24425c;color:#eaf7ff;padding:10px 12px;border-radius:7px;font:inherit}
+.info{min-height:44px;text-align:center;color:#a7c5d8;font-size:.82rem;line-height:1.6}
+.info strong{color:#fff;font-size:1rem}
+footer{color:#607d97;text-align:center;font-size:11px;line-height:1.7;max-width:650px}
+@media(max-width:480px){main{padding:22px 12px}.stage{width:94vw;height:94vw;min-width:0;min-height:0}.hud{font-size:9px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>HELLO, WORLD.</h1>
+<p>A small planet made of many languages · drag to rotate</p>
+</header>
+<div class="stage">
+<canvas id="globe" aria-label="Animated globe displaying Hello World in many languages"></canvas>
+<div class="hud"><span id="count">LANGUAGES: 0</span><span>ROTATING LANGUAGE SPHERE</span></div>
+</div>
+<div class="controls">
+<button id="toggle" class="primary">Pause rotation</button>
+<button id="shuffle">Shuffle languages</button>
+<label for="speed">Speed <input id="speed" type="range" min="0" max="2" step=".1" value=".6"></label>
+</div>
+<div class="search">
+<input id="search" type="search" placeholder="Search a language or greeting…" aria-label="Search languages">
+<button id="clear">Clear</button>
+</div>
+<div class="info" id="info"><strong>世界你好 · Hello, World!</strong><br>Move your pointer over a greeting to discover its language.</div>
+<footer>Includes greetings from a broad selection of languages and writing systems. There is no single exhaustive list of every language in the world; you can add more in <code>script.js</code>.</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
